@@ -11,7 +11,14 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// les API
+app.use((requete, reponse, next) =>{
+  reponse.setHeader("Access-Control-Allow-Origin", "*");
+  reponse.setHeader("Access-Control-Allow-Headers", "*");
+  reponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
+  next();
+})
+
+// les APIs
 
 app.use((requete, reponse, next) => {
   return next(new HttpErreur("Route non trouvée", 404));
@@ -28,7 +35,7 @@ app.use((error, requete, reponse, next) => {
 });
 
 mongoose
-.connect("mongodb://127.0.0.1:27017")
+.connect("mongodb://127.0.0.1:27017/stages")
 .then(() => {
     app.listen(5000)
     console.log("Connexion à la base de données réussie");
