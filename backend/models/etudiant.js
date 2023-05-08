@@ -6,7 +6,7 @@ const etudiantShema = new Schema({
     noDa:{type: String, required: true},
     nom: {type: String, required: true},
     courriel: {type: String, required: true},
-    profil: {type: String, required: true} // le programme de l'étudiant? besoin de clarification
+    profil: [{type: mongoose.Types.ObjectId, required: true, ref:"Stage"}] // les stages qu'ils sont affecté
 });
 
 module.exports = mongoose.model("Etudiant", etudiantShema);

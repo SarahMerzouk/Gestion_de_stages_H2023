@@ -18,7 +18,8 @@ const ajouterStage = async (requete, reponse, next) => {
     let unStage;
 
     try {
-        unStage = await Stage.findOne({description : description}); // c'est le titre du stage, alors on vérifie si le même poste est donné
+        // description est le titre du stage, alors on vérifie si le même poste est donné
+        unStage = await Stage.findOne({description : description});
     } catch {
         return next(new HttpErreur("Échec lors de la vérification des stages",500));
     }
@@ -44,7 +45,7 @@ const ajouterStage = async (requete, reponse, next) => {
     try{
         await nouveauStage.save();
     } catch {
-        return next(new HttpErreur("Erreur lors de l'ajout du stage!", 422));
+        return next(new HttpErreur("Erreur lors de la création du stage!", 422));
     }
 
     // réponse en json

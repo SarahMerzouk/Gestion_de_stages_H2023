@@ -21,6 +21,7 @@ app.use((requete, reponse, next) =>{
 
 // les APIs
 app.use("/api/stages", stagesRoutes);
+app.use("/api/etudiants", etudiantsRoutes);
 
 app.use((requete, reponse, next) => {
   return next(new HttpErreur("Route non trouvée", 404));
