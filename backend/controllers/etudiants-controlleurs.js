@@ -7,7 +7,7 @@ const Stage = require("../models/stage");
 const Etudiant = require("../models/etudiant");
 
 const ajouterEtudiant = async (requete, reponse, next) => {
-    const {noDa, nom, courriel} = requete.body;
+    const {noDa, nom, courriel, profil} = requete.body;
     let unEtudiant;
 
     try {
@@ -26,7 +26,7 @@ const ajouterEtudiant = async (requete, reponse, next) => {
         noDa,
         nom,
         courriel,
-        profil : [] // la liste des stages est vide au début
+        profil
     });
 
     // on sauvegarde l'étudiant dans la base de donnée
