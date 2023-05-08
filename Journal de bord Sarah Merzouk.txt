@@ -1,6 +1,10 @@
 DATE - HEURE - AJOUTS
 
-> 05 mai de 13h02 à ????? : va travailler sur le backend
+> 05 mai de 13h02 à ????? : travaille sur le backend
                             - j'ai fait l'ajout d'un stage
                             - j'ai fait l'ajout d'un étudiant
-                            - 
+                            - inscirire un étudiant à un stage est en progrès.
+
+                            (À Éric) Quand on inscrit un étudiant à un stage, 
+                            faut trouver un moyen de vérifier si l'étudiant est 
+                            déjà affécté à un stage ou non sans qu'il qu'ait d'erreur avec les deux requêtes.

@@ -7,6 +7,6 @@ const router = express.Router();
 router.post('/', controleursEtudiant.ajouterEtudiant);
 
 // permet d'ajouter un étudiant à un stage
-router.post('/inscription', controleursEtudiant.inscrireEtudiantAuStage);
+router.post('/inscription/:etudiantId', controleursEtudiant.inscrireEtudiantAuStage);
 
 module.exports = router;

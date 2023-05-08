@@ -7,7 +7,7 @@ const Stage = require("../models/stage");
 
 const ajouterStage = async (requete, reponse, next) => {
     const {nomPersonneContact,
-         courrielPersonneContact,
+          courrielPersonneContact,
           numeroPersonneContact,
           adresseEntreprise,
           typeDeStage,
