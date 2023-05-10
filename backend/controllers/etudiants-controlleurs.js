@@ -27,10 +27,9 @@ const ajouterEtudiant = async (requete, reponse, next) => {
         noDa,
         nom,
         courriel,
-        profil, // il est affecté à aucun stage au début
+        profil,
+        stage: [], // il est affecté à aucun stage au début
     });
-
-    console.log(newEtudiant);
     
     // on sauvegarde l'étudiant dans la base de donnée
     try{
@@ -45,18 +44,19 @@ const ajouterEtudiant = async (requete, reponse, next) => {
 
 const inscrireEtudiantAuStage = async (requete, reponse, next) => {
     let etudiantId = requete.params.etudiantId; // quel étudiant on inscrit
-    const {descrition} = requete.body; // le titre du stage
+    const {description} = requete.body; // le titre du stage
     let unEtudiant;
     let unStage;
 
     try {
-        unEtudiant = await Etudiant.findById(etudiantId);
+        unEtudiant = await Etudiant.findById(etudiantId).populate("stage");
     } catch {
         return next(new HttpErreur("Erreur lors de la vérificaton de l'étudiant!", 500));
     }
 
     try {
-        unStage = await Stage.findOne({description: descrition});
+        unStage = await Stage.findOne({description: description});
+        console.log(unStage);
     } catch {
         return next(new HttpErreur("Erreur lors de la vérificaton du stage!", 500));
     }
@@ -70,11 +70,9 @@ const inscrireEtudiantAuStage = async (requete, reponse, next) => {
     if (!unStage) {
         return next(new HttpErreur("Le stage n'existe pas!", 404));
     }
-
-    // >> j'ai enlevé l'attribut stage à l'étudiant, car ce me faisait une erreur quand j'essaie de créer un nouvel étudiant de nouveau.
-    /** 
+    
     // vérifier si l'étudiant est déjà inscrit à un stage
-    if (unEtudiant.stage != "") {
+    if (unEtudiant.stage.length > 0) {
         return next(new HttpErreur("L'étudiant est déja inscrit à un stage!", 422));
     }
 
@@ -85,7 +83,7 @@ const inscrireEtudiantAuStage = async (requete, reponse, next) => {
 
     try{
         // ajout du stage à l'étudiant et sauvegarde dans la base de données
-        unEtudiant.stage == descrition;
+        unEtudiant.stage.push(unStage);
         await unEtudiant.save();
 
         // diminuer le nombre de postes disponibles au stage en question
@@ -94,8 +92,6 @@ const inscrireEtudiantAuStage = async (requete, reponse, next) => {
     } catch {
         return next(new HttpErreur("Erreur lors de l'inscription de l'étudiant au stage!", 422));
     }
-
-    */
 
     // réponse en json
     reponse.json({ message: "ajout d'un étudiant à un stage est réussie!" });
