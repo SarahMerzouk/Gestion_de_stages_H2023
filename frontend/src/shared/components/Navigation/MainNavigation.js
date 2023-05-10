@@ -1,43 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Header from "./Header";
 import NavLinks from "./NavLinks";
-import Drawer from "./Drawer";
-import Backdrop from "./Backdrop";
+import logo from "../logo/logoMonmo.png";
+
+import "../styles/MainNavigation.css";
 
 function MainNavigation(props) {
-  const [tiroirOuvert, setTiroirOuvert] = useState(false);
-
-  function ouvrirTiroir() {
-    setTiroirOuvert(true);
-  }
-
-  function fermerTiroir() {
-    setTiroirOuvert(false);
-  }
 
   return (
     <React.Fragment>
-      {tiroirOuvert && <Backdrop onClick={fermerTiroir} />}
-
-      <Drawer show={tiroirOuvert} onClick={fermerTiroir}>
-        <nav>
-          <NavLinks />
-        </nav>
-      </Drawer>
 
       <Header>
-        <button onClick={ouvrirTiroir}>
-          <span />
-          <span />
-          <span />
-          <span />
-        </button>
-        <h1>
-          <Link to="/">Gestion des stages du collège</Link>
-        </h1>
-        <nav>
+      <Link to="/">
+        <img src={logo} alt="logo montmorency" width="100" height="100" />
+      </Link>
+        <nav className="nav">
           <NavLinks/>
         </nav>
       </Header>

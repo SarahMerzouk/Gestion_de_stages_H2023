@@ -12,5 +12,8 @@ DATE - HEURE - AJOUTS
 > 10 mai de 8h45 à 10h40 : travaille sur le backend et le frontend
                             - j'ai fait inscrire un étudiant à un stage
                             - je vais commencer la navigataion dans le frontend
+                            - les routes sont là, mais manque le pied de page
 
                             (À Éric) J'ai réglé le probème pour l'attribut stage du shéma Etudiant.
+                            il faut styler le menu de navigation, genre pour que ce soit dans la
+                            même ligne que l'image.
