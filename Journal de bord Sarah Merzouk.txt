@@ -21,3 +21,5 @@ DATE - HEURE - AJOUTS
                             - J'ai fait la page informative accueil
                             - J'ai fait la page informative faq
                             - J'ai fait la page statique profil et compétence ses stagiaires
+                            - J'ai fait la page statique déroulement des stages pour les employeurs
+                            - J'ai fait la page statique déroulement des stages pour les étudiants.
