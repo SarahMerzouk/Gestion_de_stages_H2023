@@ -18,4 +18,5 @@ DATE - HEURE - AJOUTS
                             (À Éric) J'ai réglé le probème pour l'attribut stage du shéma Etudiant.
                     
 > 12 mai de 12h45 à      : travaille sur le frontend.
-                            - 
+                            - J'ai fait la page informative accueil
+                            - J'ai fait la page faq

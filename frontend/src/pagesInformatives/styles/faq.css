@@ -1,0 +1,18 @@
+.question{
+    background-color: bisque;
+    list-style: none;
+    border: 3px solid #08060c;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.question, h4 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+}
+
+.titre{
+    padding: 0.5rem;
+    margin: 1rem;
+}

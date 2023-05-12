@@ -8,12 +8,12 @@ import {
 
 import MainNavigation from "./navigation/Navigation/MainNavigation";
 import Stages from "./stages/page/Stage";
-import Acceuil from "./acceuil/page/Acceuil";
+import Acceuil from "./pagesInformatives/Acceuil";
 import Etudiants from "./etudiants/pages/Etudiant";
-import DeroulementStageEmployeur from "./deroulementStageEmployeur/page/DeroulementStageEmployeur";
-import DeroulementStageEtudiant from "./deroulementStageEtudiant/page/DeroulementStageEtudiant";
-import ProfilEtCompetence from "./profilEtCompetence/page/ProfilEtCompetence";
-import FAQ from "./faq/page/Faq";
+import DeroulementStageEmployeur from "./pagesInformatives/DeroulementStageEmployeur";
+import DeroulementStageEtudiant from "./pagesInformatives/DeroulementStageEtudiant";
+import ProfilEtCompetence from "./pagesInformatives/ProfilEtCompetence";
+import FAQ from "./pagesInformatives/Faq";
 
 import './App.css';
 
@@ -49,8 +49,8 @@ function App(){
             {/*<ProfilEtCompetence />*/}
           </Route>
           
-          <Route path="/" exact>
-            {/*<FAQ />*/}
+          <Route path="/faq" exact>
+            <FAQ />
           </Route>
 
           <Redirect to="/" />
