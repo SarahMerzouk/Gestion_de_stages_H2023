@@ -1,0 +1,19 @@
+.categorie{
+    background-color: bisque;
+    border: 3px solid #08060c;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.titre {
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.programme {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    color: blueviolet;
+    font-style: italic;
+}

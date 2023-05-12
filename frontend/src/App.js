@@ -29,24 +29,24 @@ function App(){
             <Acceuil />
           </Route>
           
-          <Route path="/" exact>
+          <Route path="/stage" exact>
             {/*<Stages />*/}
           </Route>
           
-          <Route path="/" exact>
+          <Route path="/etudiant" exact>
             {/*<Etudiants />*/}
           </Route>
 
-          <Route path="/" exact>
+          <Route path="/deroulementStageEmployeur" exact>
             {/*<DeroulementStageEmployeur />*/}
           </Route>
           
-          <Route path="/" exact>
+          <Route path="/deroulementStageEtudiant" exact>
             {/*<DeroulementStageEtudiant />*/}
           </Route>
           
-          <Route path="/" exact>
-            {/*<ProfilEtCompetence />*/}
+          <Route path="/profilEtCompetence" exact>
+            {<ProfilEtCompetence />}
           </Route>
           
           <Route path="/faq" exact>

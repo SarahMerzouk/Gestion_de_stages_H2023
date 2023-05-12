@@ -19,4 +19,5 @@ DATE - HEURE - AJOUTS
                     
 > 12 mai de 12h45 à      : travaille sur le frontend.
                             - J'ai fait la page informative accueil
-                            - J'ai fait la page faq
+                            - J'ai fait la page informative faq
+                            - J'ai fait la page statique profil et compétence ses stagiaires
