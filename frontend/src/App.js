@@ -6,7 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import MainNavigation from "./navigation/Navigation/MainNavigation";
 import Stages from "./stages/page/Stage";
 import Acceuil from "./acceuil/page/Acceuil";
 import Etudiants from "./etudiants/pages/Etudiant";
@@ -26,7 +26,7 @@ function App(){
       <main>
         <Switch>
           <Route path="/" exact>
-            {/*<Acceuil />*/}
+            <Acceuil />
           </Route>
           
           <Route path="/" exact>
