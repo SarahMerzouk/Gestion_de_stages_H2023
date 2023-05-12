@@ -1,0 +1,13 @@
+.accueil {
+    background-color: bisque;
+    list-style: none;
+    border: 3px solid #08060c;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.titre{
+    padding: 0.5rem;
+    margin: 1rem;   
+}

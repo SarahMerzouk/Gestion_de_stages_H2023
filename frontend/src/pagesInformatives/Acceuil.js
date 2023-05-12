@@ -1,12 +1,14 @@
 import React from "react";
 
+import "./styles/acceuil.css"
+
 function Acceuil() {
 
     return (
         <div>
-            <h2>Page d'acceuil</h2>
+            <h2 className="titre">Page d'acceuil</h2>
 
-            <div>
+            <div className="accueil">
                 <p>Bienvenue sur le site des stages de fin d'études des
                 techniques de l'informatique du Collège Montmorency!</p>
 
