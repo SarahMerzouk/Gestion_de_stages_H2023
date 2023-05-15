@@ -16,6 +16,7 @@ import ProfilEtCompetence from "./pagesInformatives/ProfilEtCompetence";
 import FAQ from "./pagesInformatives/Faq";
 
 import './App.css';
+import MainFooter from "./piedDePage/footer/MainFooter";
 
 function App(){
   // je les ai mis en commentaire, car pour l'instant, il n'y a rien dedans (les fichers pages) et cela faisait des erreurs.
@@ -56,6 +57,7 @@ function App(){
           <Redirect to="/" />
         </Switch>
       </main>
+      <MainFooter/>
     </Router>
   );
 };
