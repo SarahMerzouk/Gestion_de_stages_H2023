@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import logo from "../logo/logo-footer.png"
+import logo from "../logo/logo-footer-white.png"
 import "../style/MainFooter.css"
 
 function MainFooter() {
@@ -8,7 +8,7 @@ function MainFooter() {
         <div className="footer-main-div">
             <div className="footer-logo-div">
                 <Link to="/">
-                    <img src={logo} alt="Logo de Montmorency" width="200" height="50" />
+                    <img src={logo} alt="Logo de Montmorency" width="225" height="40" />
                 </Link>
             </div>
 

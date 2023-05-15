@@ -9,5 +9,23 @@
 
 .titre{
     padding: 0.5rem;
-    margin: 1rem;   
+    margin: 1rem;  
+    
+
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 400;
+    color: #303032;
+    font-family: 'News Cycle', sans-serif;
+}
+
+.sous-titre {
+    padding: 0.5rem;
+    margin: 1rem;  
+
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 400;
+    color: #303032;
+    font-family: 'News Cycle', sans-serif;
 }

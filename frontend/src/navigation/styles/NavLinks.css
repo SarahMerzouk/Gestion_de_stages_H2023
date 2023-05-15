@@ -12,17 +12,32 @@
 .nav-links li {
     font-size: 17px;
     font-style: oblique;
+    padding: 10px;
+    margin: 0.5em;
+    height: auto;
+    width: auto;
+    background: #00B5DF;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.15);
 }
+
+
   
 .nav-links a {
-    border: 2px solid black;
     padding: 0.5rem;
+    color: #ede8e8;
+
+    text-decoration: none;
+    width: 300px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
   
 .nav-links a:hover,
-.nav-links a:active,
-.nav-links a.active {
-    background: #d1a023;
-    border-color: #292929;
-    color: #222ac8;
+.nav-links a:active {
+    background: #00cfff;
+    color: #ede8e8;
+    text-decoration: underline;
 }

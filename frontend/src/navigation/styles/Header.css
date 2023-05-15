@@ -1,5 +1,8 @@
 .header{
     font-style: oblique;
-    border: 0.5px solid black;
-    background-color: bisque;
+    border-bottom: 0.5px solid #dddddd;
+}
+
+.header img {
+    justify-content: center;
 }
