@@ -21,6 +21,10 @@
     box-shadow: 0 5px 5px rgba(0,0,0,0.15);
 }
 
+.nav-links li:hover {
+    background: #00cfff;
+}
+
 
   
 .nav-links a {
