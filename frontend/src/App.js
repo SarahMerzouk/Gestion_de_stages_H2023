@@ -31,7 +31,7 @@ function App(){
           </Route>
           
           <Route path="/stage" exact>
-            {/*<Stages />*/}
+            <Stages />
           </Route>
           
           <Route path="/etudiant" exact>

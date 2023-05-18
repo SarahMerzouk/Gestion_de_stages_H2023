@@ -25,4 +25,5 @@ DATE - HEURE - AJOUTS
                             - J'ai fait la page informative déroulement des stages pour les étudiants.
 
 > 18 mai de 08h00 à -----: travaille sur le frontend.
+                            - ajout d'une requête au backend qui récupère la liste de stages
                             - Je vais afficher la liste de stages

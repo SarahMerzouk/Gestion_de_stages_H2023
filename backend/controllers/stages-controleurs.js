@@ -5,6 +5,24 @@ const { v4: uuidv4 } = require("uuid");
 const HttpErreur = require("../models/http-erreur");
 const Stage = require("../models/stage");
 
+// recevoir la liste des stages
+const getStages = async (requete, reponse, next) => {
+    let stages;
+  
+    try {
+      stages = await Stage.find({});
+    } catch {
+      return next(new HttpErreur("Erreur accès stages"), 500);
+    }
+  
+    reponse.json({
+      stages: stages.map((stage) =>
+        stage.toObject({ getters: true })
+      ),
+    });
+  };
+  
+
 const ajouterStage = async (requete, reponse, next) => {
     const {nomPersonneContact,
           courrielPersonneContact,
@@ -53,3 +71,4 @@ const ajouterStage = async (requete, reponse, next) => {
 };
 
 exports.ajouterStage = ajouterStage;
+exports.getStages = getStages;
