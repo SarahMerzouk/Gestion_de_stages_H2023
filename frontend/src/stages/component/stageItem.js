@@ -39,11 +39,6 @@ function StageItem(props) {
                         <span className="title">Nombre de postes disponibles: </span>
                         <span className="valeur">{props.nbPostesDispo}</span>
                     </p>
-                    
-                    <p>
-                        <span className="title">Rémunération: </span>
-                        <span className="valeur">{props.remuneration} $</span>
-                    </p>
                 </div>
             </li>
         </div>
