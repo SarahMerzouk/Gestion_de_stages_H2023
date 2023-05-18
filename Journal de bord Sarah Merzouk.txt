@@ -27,3 +27,4 @@ DATE - HEURE - AJOUTS
 > 18 mai de 08h00 à -----: travaille sur le frontend.
                             - ajout d'une requête au backend qui récupère la liste de stages
                             - J'arrive à afficher la liste de stages
+                            - J'ai ajouté l'option d'afficher les stages d'un profil en particulier

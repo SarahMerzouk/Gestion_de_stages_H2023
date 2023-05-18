@@ -8,7 +8,7 @@ function DeroulementStageEtudiant () {
 
             <h2 className="titre">Directives pour les étudiants</h2>
                 <div className="section">
-                    <h4 className="sous-titre">Tâches à effectuer par l'étudiant à la session d'automne  (c'est-à-dire maintenant):</h4>
+                    <h4>Tâches à effectuer par l'étudiant à la session d'automne  (c'est-à-dire maintenant):</h4>
                         <li className="number">Au plus tard le mardi 18 septembre à 12h00: Produire un
                         CV que vous devez remettre au coordonnateur des stages (Sylvain Labranche).</li>
 
