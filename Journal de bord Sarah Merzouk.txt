@@ -28,3 +28,4 @@ DATE - HEURE - AJOUTS
                             - ajout d'une requête au backend qui récupère la liste de stages
                             - J'arrive à afficher la liste de stages
                             - J'ai ajouté l'option d'afficher les stages d'un profil en particulier
+                            - J'ai commencé ajouter un nouveau stage, mais y a un truc je comprends pas.
