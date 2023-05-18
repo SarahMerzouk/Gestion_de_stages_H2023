@@ -1,0 +1,19 @@
+.title{
+    padding: 0.5rem;
+    margin: 1rem;  
+
+    font-style: italic;
+    text-transform: none;
+    font-size: 20px;
+    color: #303032;
+    font-family: "Times New Roman", Times, serif;
+}
+.valeur {
+
+}
+
+.item {
+    border: 2px solid black;
+    border-width: 1px;
+    width: 900px;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 
 import StageItem from "./stageItem";
+import "./stageList.css";
 
 function ListeDeStages(props) {
     if (props.items.length === 0) {
@@ -12,11 +13,17 @@ function ListeDeStages(props) {
       }
 
     return (
-        <ul>
-            {props.stage.map(unStage => {
-                <div key={unStage.description}>
-                    <StageItem stage={unStage}/>
-                </div>
+        <ul className="list">
+            {props.items.map(unStage => {
+               return <StageItem 
+                    key={unStage.description}
+                    nomPersonneContact={unStage.nomPersonneContact}
+                    courrielPersonneContact={unStage.courrielPersonneContact}
+                    numeroPersonneContact={unStage.numeroPersonneContact}
+                    adresseEntreprise={unStage.adresseEntreprise}
+                    typeDeStage={unStage.typeDeStage}
+                    nbPostesDispo={unStage.nbPostesDispo}
+                    remuneration={unStage.remuneration}/>
             })}
         </ul>
     );

@@ -1,37 +1,27 @@
 import React, { useState, useEffect } from "react";
 import StagesList from "../component/stageList";
+import { useHttpClient } from "../../shared/hooks/http-hook";
 import ErrorModal from "../../shared/UIElements/ErrorModal";
 
 const Stages = () => {
-    const [error, setError] = useState();
-    const [stages, setStages] = useState();
-
+  const {error, sendRequest, clearError } = useHttpClient();
+  const [stages, setStages] = useState();
     useEffect(() => {
-        const envoyerRequete = async () => {
-          try {
-            const reponse = await fetch("http://localhost:5000/api/stages");
-    
-            const reponseData = await reponse.json();
-            console.log(reponseData);
-            if (!reponse.ok) {
-              throw new Error(reponseData.message);
-            }
-            console.log(reponseData)
-            setStages(reponseData.utilisateurs);
-          } catch (err) {
-            setError(err.message);
-          }
-        };
-        envoyerRequete();
-      }, []);
-    
-      const errorHandler = () => {
-        setError(null);
+      const recupererStages = async () => {
+        try {
+          const reponseData = await sendRequest("http://localhost:5000/api/stages");
+          setStages(reponseData.stages);
+
+        } catch (err) {
+          //
+        }
       };
+      recupererStages();
+    }, [sendRequest]);
     
       return (
         <React.Fragment>
-            <ErrorModal error={error} onClear={errorHandler} />
+            <ErrorModal error={error} onClear={clearError} />
             {stages && <StagesList items={stages} />};
         </React.Fragment>
       );
