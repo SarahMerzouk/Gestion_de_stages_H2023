@@ -17,9 +17,12 @@ DATE - HEURE - AJOUTS
 
                             (À Éric) J'ai réglé le probème pour l'attribut stage du shéma Etudiant.
                     
-> 12 mai de 12h45 à      : travaille sur le frontend.
+> 12 mai de 12h45 à 16h04 : travaille sur le frontend.
                             - J'ai fait la page informative accueil
                             - J'ai fait la page informative faq
-                            - J'ai fait la page statique profil et compétence ses stagiaires
-                            - J'ai fait la page statique déroulement des stages pour les employeurs
-                            - J'ai fait la page statique déroulement des stages pour les étudiants.
+                            - J'ai fait la page informative profil et compétence ses stagiaires
+                            - J'ai fait la page informative déroulement des stages pour les employeurs
+                            - J'ai fait la page informative déroulement des stages pour les étudiants.
+
+> 18 mai de 08h00 à -----: travaille sur le frontend.
+                            - Je vais afficher la liste de stages
