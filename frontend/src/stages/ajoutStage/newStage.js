@@ -97,8 +97,9 @@ const NewStage = () => {
              id="description"
              element="input"
              type="text"
+             placeholder="Titre du poste"
              label="Titre du poste: "
-             validators={[VALIDATOR_REQUIRE()]}
+             validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(5)]}
              errorText="Entrez un titre valide."
              onInput={inputHandler}
              className="champ-formulaire"
@@ -107,8 +108,9 @@ const NewStage = () => {
              id="nomPersonneContact"
              element="input"
              type="text"
+             placeholder="Nom et prénom"
              label="Nom du recruteur: "
-             validators={[VALIDATOR_REQUIRE()]}
+             validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(5)]}
              errorText="Entrez un nom valide."
              onInput={inputHandler}
              className="champ-formulaire"
@@ -117,6 +119,7 @@ const NewStage = () => {
              id="courrielPersonneContact"
              element="input"
              type="text"
+             placeholder="aaaa@aaaa.com"
              label="Courriel du recruteur : "
              validators={[VALIDATOR_REQUIRE(), VALIDATOR_EMAIL]}
              errorText="Entrez un courriel valide."
@@ -127,8 +130,9 @@ const NewStage = () => {
              id="numeroPersonneContact"
              element="input"
              type="text"
+             placeholder="514-000-0000"
              label="Numéro du recruteur :"
-             validators={[VALIDATOR_REQUIRE()]}
+             validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(10)]}
              errorText="Entrez un numéro valide."
              onInput={inputHandler}
              className="champ-formulaire"
@@ -137,8 +141,9 @@ const NewStage = () => {
              id="adresseEntreprise"
              element="input"
              type="text"
+             placeholder="21 Bd de l'avenir, Laval, Qc"
              label="Adresse de l'entreprise: "
-             validators={[VALIDATOR_REQUIRE()]}
+             validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(5)]}
              errorText="Entrez une adresse valide."
              onInput={inputHandler}
              className="champ-formulaire"
@@ -147,6 +152,7 @@ const NewStage = () => {
              id="typeDeStage"
              element="input"
              type="text"
+             placeholder="Réseaux ou Développement des applications "
              label="Profil de stage: "
              validators={[VALIDATOR_REQUIRE()]}
              errorText="Entrez un profil valide."
@@ -157,6 +163,7 @@ const NewStage = () => {
              id="nbPostesDispo"
              element="input"
              type="text"
+             placeholder="1"
              label="Nombre de postes: "
              validators={[VALIDATOR_REQUIRE()]}
              errorText="Entrez un nombre valide."
@@ -167,6 +174,7 @@ const NewStage = () => {
              id="remuneration"
              element="input"
              type="text"
+             placeholder="25 $/h"
              label="Rémunération: "
              validators={[VALIDATOR_REQUIRE()]}
              errorText="Entrez un salaire valide."
