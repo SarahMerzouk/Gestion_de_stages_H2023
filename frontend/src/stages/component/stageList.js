@@ -22,6 +22,7 @@ function ListeDeStages(props) {
                     numeroPersonneContact={unStage.numeroPersonneContact}
                     adresseEntreprise={unStage.adresseEntreprise}
                     typeDeStage={unStage.typeDeStage}
+                    description={unStage.description}
                     nbPostesDispo={unStage.nbPostesDispo}/>
             })}
         </ul>

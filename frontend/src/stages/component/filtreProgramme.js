@@ -12,7 +12,7 @@ const FiltreProgramme = (props) => {
             <label className='label'>Choix de profil:  </label>
             <div>
                 <select value={props.selected} onChange={menuDeroulantHandler}>
-                    <option value="Développement des application">Développement d'application</option>
+                    <option value="Développement des applications">Développement d'application</option>
                     <option value='Réseaux'>Réseaux</option>
                 </select>
             </div>

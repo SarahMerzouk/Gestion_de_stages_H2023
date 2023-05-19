@@ -7,7 +7,7 @@ import FiltreProgramme from "../component/filtreProgramme";
 const Stages = () => {
   const { error, sendRequest, clearError } = useHttpClient();
   const [stages, setStages] = useState();
-  const [filteredProfil, setFilteredProfil] = useState("Développement des application");
+  const [filteredProfil, setFilteredProfil] = useState("Développement des applications");
 
   const filterChangeHandler = (selectedProfil) => {
     setFilteredProfil(selectedProfil);

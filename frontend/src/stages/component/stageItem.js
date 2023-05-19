@@ -9,7 +9,9 @@ function StageItem(props) {
         <div>
             <li className="item">
                 <div>
-                    <h2>{props.description}</h2>
+                    <h2> 
+                        <span className="description">{props.description}</span>
+                    </h2>
                     <p>
                         <span className="title">Nom de la personne à contacter:</span>
                         <span className="valeur">{props.nomPersonneContact}</span>
