@@ -36,3 +36,5 @@ DATE - HEURE - AJOUTS
 > 19 mai de 14h42 à       : travaille sur le frontend.
                             - ajout d'une liste déroulante de choix de programme au formulaire d'ajout de stages.
                             - ajout des validateurs.
+                            - styler le formulaire.
+                            - ajout d'un overlay qui informe l'utilisateur que le stage a été ajouté.

@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { cloneElement, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./newStage.css";
@@ -16,9 +16,9 @@ const NewStage = () => {
   const [saisieNbPoste, setSaisieNbPoste] = useState(0);
   const [saisieTitre, setSaisieTitre] = useState("");
   const [saisieRemuneration, setSaisieRemuneration] = useState("25 $/h");
-  const {sendRequest} = useHttpClient();
+  const { sendRequest } = useHttpClient();
   const [enEdition, setEnEdition] = useState(false);
-
+  const [stageEstAjoute, setStageEstAjoute] = useState(false);
 
   // handler des saisies
   function saisieNomHandler(event) {
@@ -88,7 +88,6 @@ const NewStage = () => {
   const stageSubmitHandler = async (event) => {
     event.preventDefault();
 
-    
     if (
       !containsNumbers(saisieTitre) &&
       !containsNumbers(saisieNomPersonneContact) &&
@@ -101,7 +100,7 @@ const NewStage = () => {
         const responseData = await sendRequest(
           "http://localhost:5000/api/stages",
           "POST",
-          JSON.stringify({            
+          JSON.stringify({
             nomPersonneContact: saisieNomPersonneContact,
             courrielPersonneContact: saisieCourrielPersonneContact,
             numeroPersonneContact: saisieCourrielPersonneContact,
@@ -109,16 +108,24 @@ const NewStage = () => {
             typeDeStage: saisieTypeStage,
             nbPostesDispo: saisieNbPoste,
             description: saisieTitre,
-            remuneration: saisieRemuneration
+            remuneration: saisieRemuneration,
           }),
           {
             "Content-Type": "application/json",
           }
         );
 
-        console.log(responseData);
+        console.log(responseData.message);
 
         history.push("/");
+
+        if (responseData.message == "ajout d'un stage réussie!") {
+          setStageEstAjoute(true);
+        } else {
+          setStageEstAjoute(false);
+        }
+        console.log(stageEstAjoute);
+
       } catch (err) {
         console.log(err);
       }
@@ -149,7 +156,9 @@ const NewStage = () => {
               minLength={5}
             />
             {containsNumbers(saisieTitre) && (
-              <p className="erreur">Entrez un titre valide qui ne contient que des lettres.</p>
+              <p className="erreur">
+                Entrez un titre valide qui ne contient que des lettres.
+              </p>
             )}
           </div>
 
@@ -164,7 +173,9 @@ const NewStage = () => {
               minLength={5}
             />
             {containsNumbers(saisieNomPersonneContact) && (
-              <p className="erreur">Entrez un nom valide qui ne contient que des lettres.</p>
+              <p className="erreur">
+                Entrez un nom valide qui ne contient que des lettres.
+              </p>
             )}
           </div>
 
@@ -179,8 +190,10 @@ const NewStage = () => {
               minLength={10}
             />
             {!validatePhoneNumber(saisieNumeroPersonneContact) && (
-                <p className="erreur">Entrez un numéro valide qui ne contient que des chiffres.</p>
-              )}
+              <p className="erreur">
+                Entrez un numéro valide qui ne contient que des chiffres.
+              </p>
+            )}
           </div>
 
           <div>
@@ -194,7 +207,9 @@ const NewStage = () => {
               minLength={5}
             />
             {!respectMailFormat(saisieCourrielPersonneContact) && (
-              <p className="erreur">Entrez un courriel valide qui respecte le format.</p>
+              <p className="erreur">
+                Entrez un courriel valide qui respecte le format.
+              </p>
             )}
           </div>
 
@@ -208,7 +223,9 @@ const NewStage = () => {
               required
               minLength={5}
             />
-            {!containsNumbers(saisieAdresse) && <p className="erreur">Entrez une adresse valide.</p>}
+            {!containsNumbers(saisieAdresse) && (
+              <p className="erreur">Entrez une adresse valide.</p>
+            )}
           </div>
 
           <div>
@@ -255,9 +272,15 @@ const NewStage = () => {
 
           <button type="submit">Ajouter un stage!</button>
           <button type="button" onClick={arretEditionHandler}>
-              Annuler
-            </button>
+            Annuler
+          </button>
         </form>
+      )}
+
+      {stageEstAjoute && (
+        <div className="overlay">
+          <p>Le stage a été ajouté !</p>
+        </div>
       )}
     </div>
   );
