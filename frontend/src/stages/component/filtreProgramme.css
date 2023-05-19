@@ -9,3 +9,19 @@
     font-style: italic;
     font-weight: bold;
 }
+
+.profil{
+    display: block;
+    width: 53.50%;
+    font: inherit;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    margin-top: 0.5rem;
+    padding: 0.15rem 0.25rem;
+    font-style: none;
+}
+
+.profil, option {
+    color: black;
+    font-weight: lighter;
+}

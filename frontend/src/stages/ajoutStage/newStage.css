@@ -1,0 +1,102 @@
+.form-control {
+    margin: 1rem 0;
+    border: 2px solid black;
+    width: 60%;
+    border-radius: 5%;
+    background-color: rgb(206, 218, 206);
+    margin-left: 20%;
+}
+  
+.form-control h3 {
+    display: block;
+    margin-left: 42%;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: rgb(3, 82, 3);
+    font-style: italic;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+    display: block;
+}
+  
+.form-control label {
+    margin-left: 25%;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+  
+.form-control input,
+.form-control textarea {
+    width: 50%;
+    font: inherit;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    padding: 0.15rem 0.25rem;
+    margin-left: 25%;
+}
+  
+.form-control input:focus,
+.form-control textarea:focus {
+    outline: none;
+    background: #ebebeb;
+    border-color: #510077;
+}
+
+.form-control button {
+    display: block;
+    margin-left: 39.98%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    width: 200px;
+    height: 50px;
+
+    background-color:rgb(3, 82, 3);
+    color: white;
+    border-radius: 5%;
+}
+
+.form-control button:hover {
+    color: rgb(3, 82, 3);
+    background-color: white;
+}
+
+.programme-select{
+    display: block;
+    width: 51%;
+    font: inherit;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    padding: 0.15rem 0.25rem;
+    margin-left: 25%;
+}
+
+.buttonEditionDebut {
+    display: block;
+    margin-left: 38%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    width: 400px;
+    height: 70px;
+    background: #00B5DF;
+    color: #ede8e8;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    border-radius: 5%;
+    font-size: 100%;
+}
+
+.buttonEditionDebut:hover{
+    background: #00cfff;
+}
+
+.erreur {
+    color: red;
+    padding: 0.15rem 0.25rem;
+    margin-left: 25%;
+}

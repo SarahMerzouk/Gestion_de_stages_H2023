@@ -11,9 +11,9 @@ const FiltreProgramme = (props) => {
         <div  className='liste'>
             <label className='label'>Choix de profil:  </label>
             <div>
-                <select value={props.selected} onChange={menuDeroulantHandler}>
-                    <option value="Développement des applications">Développement d'application</option>
-                    <option value='Réseaux'>Réseaux</option>
+                <select value={props.selected} onChange={menuDeroulantHandler} className='profil'>
+                    <option value="Développement des applications" className='programme-choix'>Développement d'application</option>
+                    <option value='Réseaux' className='programme-choix'>Réseaux</option>
                 </select>
             </div>
         </div>
