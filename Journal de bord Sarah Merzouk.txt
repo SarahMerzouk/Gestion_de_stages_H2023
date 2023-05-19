@@ -24,8 +24,11 @@ DATE - HEURE - AJOUTS
                             - J'ai fait la page informative déroulement des stages pour les employeurs
                             - J'ai fait la page informative déroulement des stages pour les étudiants.
 
-> 18 mai de 08h00 à -----: travaille sur le frontend.
+> 18 mai de 08h00 à 11h28 : travaille sur le frontend.
                             - ajout d'une requête au backend qui récupère la liste de stages
                             - J'arrive à afficher la liste de stages
                             - J'ai ajouté l'option d'afficher les stages d'un profil en particulier
                             - J'ai commencé ajouter un nouveau stage, mais y a un truc je comprends pas.
+
+> 18 mai de 22h00 à      : travaille sur le frontend.
+                            - je vais ajouter la fonctionnalité qui permet d'ajouter un nouveau stage.

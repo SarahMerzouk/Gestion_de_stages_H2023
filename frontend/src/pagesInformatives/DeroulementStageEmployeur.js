@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./styles/deroulementStageEmployeur.css";
+import NewStage from "../stages/ajoutStage/newStage";
 
 function DeroulementStageEmployeur() {
     return (
@@ -23,7 +24,14 @@ function DeroulementStageEmployeur() {
                     <Link to="/profilEtCompetence"> profil de sortie </Link> 
                 pour connaître le profil de sortie et les compétences des étudiants.</p>
             </div>
+
+            <div>
+                <React.Fragment>
+                    <NewStage />
+                </React.Fragment>
+            </div>
         </div>
+        
     );
 }
 
