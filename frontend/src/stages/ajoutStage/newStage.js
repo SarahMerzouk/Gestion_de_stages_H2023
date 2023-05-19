@@ -86,7 +86,7 @@ const NewStage = () => {
   const stageSubmitHandler = async (event) => {
     event.preventDefault();
 
-    /*
+    
     if (
       !containsNumbers(saisieTitre) &&
       !containsNumbers(saisieNomPersonneContact) &&
@@ -95,31 +95,6 @@ const NewStage = () => {
       containsNumbers(saisieRemuneration) &&
       containsNumbers(saisieAdresse)
     ) {
-      try {
-        const responseData = await sendRequest(
-          "http://localhost:5000/api/stages",
-          "POST",
-          JSON.stringify({
-            nomPersonneContact: saisieNomPersonneContact,
-            courrielPersonneContact: saisieCourrielPersonneContact,
-            numeroPersonneContact: saisieCourrielPersonneContact,
-            adresseEntreprise: saisieAdresse,
-            typeDeStage: saisieTypeStage,
-            nbPostesDispo: saisieNbPoste,
-            description: saisieTitre,
-            remuneration: saisieRemuneration,
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-
-        console.log(responseData);
-
-        history.push("/");
-      } catch (err) {
-        console.log(err);
-      } */
       try {
         const responseData = await sendRequest(
           "http://localhost:5000/api/stages",
@@ -145,6 +120,7 @@ const NewStage = () => {
       } catch (err) {
         console.log(err);
       }
+    }
   };
 
   return (
