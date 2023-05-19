@@ -30,5 +30,9 @@ DATE - HEURE - AJOUTS
                             - J'ai ajouté l'option d'afficher les stages d'un profil en particulier
                             - J'ai commencé ajouter un nouveau stage, mais y a un truc je comprends pas.
 
-> 18 mai de 22h00 à      : travaille sur le frontend.
-                            - je vais ajouter la fonctionnalité qui permet d'ajouter un nouveau stage.
+> 18 mai de 22h00 à 23h40 : travaille sur le frontend.
+                            - ajout de la fonctionnalité qui permet d'ajouter un nouveau stage.
+
+> 19 mai de 14h42 à       : travaille sur le frontend.
+                            - ajout d'une liste déroulante de choix de programme au formulaire d'ajout de stages.
+                            - ajout des validateurs.

@@ -1,19 +1,149 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-
 import Input from "../../shared/FormElements/Input";
 import Button from "../../shared/FormElements/Button";
 import ErrorModal from "../../shared/UIElements/ErrorModal";
-
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
   VALIDATOR_EMAIL,
 } from "../../shared/util/validators";
-
 import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
+const NewStage = () => {
+
+  const [saisieNomPersonneContact, setSaisieNomPersonneContact] = useState("");
+  const [saisieCourrielPersonneContact, setSaisieCourrielPersonneContact] = useState("");
+  const [saisieNumeroPersonneContact, setSaisieNumeroPersonneContact] = useState("");
+  const [saisieAdresse, setSaisieAdresse] = useState("");
+  const [saisieTypeStage, setSaisieTypeStage] = useState("Développement des applications");
+  const [saisieNbPoste, setSaisieNbPoste] = useState(0);
+  const [saisieTitre, setSaisieTitre] = useState("");
+  const [saisieRemuneration, setSaisieRemuneration] = useState(0);
+  const {error, sendRequest, clearError } = useHttpClient();
+  
+  const history = useHistory();
+
+  // handler des saisies
+  function saisieNomHandler(event) {
+    setSaisieNomPersonneContact(event.target.value);
+  }
+
+  function saisieCourrielHandler(event) {
+    setSaisieCourrielPersonneContact(event.target.value);
+  }
+
+  function saisieNumeroHandler(event) {
+    setSaisieNumeroPersonneContact(event.target.value);
+  }
+
+  function saisieAdresseHandler(event) {
+    setSaisieAdresse(event.target.value);
+  }
+
+  function saisieTypeStageHandler(event) {
+    setSaisieTypeStage(event.target.value);
+  }
+
+  function saisieNbPostesHandler(event) {
+    setSaisieNbPoste(event.target.value);
+  }
+
+  function saisieTitreHandler(event) {
+    setSaisieTitre(event.target.value);
+  }
+
+  function saisieRemunerationHandler(event) {
+    setSaisieRemuneration(event.target.value);
+  }
+
+  const stageSubmitHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      const responseData = await sendRequest(
+        "http://localhost:5000/api/stages",
+        "POST",
+        JSON.stringify({
+          nomPersonneContact: saisieNomPersonneContact,
+          courrielPersonneContact: saisieCourrielPersonneContact,
+          numeroPersonneContact: saisieCourrielPersonneContact ,
+          adresseEntreprise: saisieAdresse,
+          typeDeStage: saisieTypeStage,
+          nbPostesDispo: saisieNbPoste,
+          description: saisieTitre,
+          remuneration: saisieRemuneration,
+        }),
+        {
+          "Content-Type": "application/json",
+        }
+      );
+
+      console.log(responseData);
+      
+      history.push("/");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  return (
+    <div>
+      <form onSubmit={stageSubmitHandler}>
+        <h3>Ajouter un stage</h3>
+
+        <div>
+            <label>Titre du stage: </label>
+            <input type="text"value={saisieTitre} onChange={saisieTitreHandler} className="champ-formulaire" required minLength={5} />
+        </div>
+
+        <div>
+            <label>Nom du recruteur: </label>
+            <input type="text" value={saisieNomPersonneContact} onChange={saisieNomHandler} required minLength={5} />
+        </div>
+        
+        <div>
+            <label>Numéro du recruteur: </label>
+            <input type="text" value={saisieNumeroPersonneContact} onChange={saisieNumeroHandler} required minLength={10}/>
+        </div>
+        
+        <div>
+            <label>Courriel du recruteur: </label>
+            <input type="text" value={saisieCourrielPersonneContact} onChange={saisieCourrielHandler} required minLength={5} />
+        </div>
+        
+        <div>
+            <label>Adresse de l'entreprise: </label>
+            <input type="text" value={saisieAdresse} onChange={saisieAdresseHandler} required minLength={5}/>
+        </div>
+        
+        <div>
+            <label>Type de stage: </label>
+            <select>
+              <option value={saisieTypeStage} onChange={saisieTypeStageHandler}>Réseaux</option>
+              <option value={saisieTypeStage} onChange={saisieTypeStageHandler}>Développement des applications</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Nombre de postes: </label>
+            <input type="number" value={saisieNbPoste} onChange={saisieNbPostesHandler} required minLength={1} />
+        </div>
+
+        <div>
+            <label>Rémunération: </label>
+            <input type="text" value={saisieRemuneration} onChange={saisieRemunerationHandler} required minLength={1} />
+        </div>
+        
+        <Button type="submit">
+             Ajouter un stage!
+        </Button>
+      </form>
+    </div>
+  );
+}
+/*
 const NewStage = () => {
   const { error, sendRequest, clearError } = useHttpClient();
   const [formState, inputHandler] = useForm(
@@ -188,5 +318,6 @@ const NewStage = () => {
     </React.Fragment>
   );
 };
+*/
 
 export default NewStage;
