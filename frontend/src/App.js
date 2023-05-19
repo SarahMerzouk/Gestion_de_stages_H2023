@@ -35,7 +35,7 @@ function App(){
           </Route>
           
           <Route path="/etudiant" exact>
-            {/*<Etudiants />*/}
+            <Etudiants />
           </Route>
 
           <Route path="/deroulementStageEmployeur" exact>

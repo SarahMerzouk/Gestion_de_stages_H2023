@@ -9,17 +9,19 @@
 }
 
 .form-control label {
+  margin-left: 25%;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .form-control input,
 .form-control textarea {
-  width: 100%;
+  width: 50%;
   font: inherit;
   border: 1px solid #ccc;
   background: #f8f8f8;
   padding: 0.15rem 0.25rem;
+  margin-left: 25%;
 }
 
 .form-control input:focus,
@@ -32,6 +34,7 @@
 .form-control--invalid label,
 .form-control--invalid p {
   color: red;
+  margin-left: 25%;
 }
 
 .form-control--invalid input,

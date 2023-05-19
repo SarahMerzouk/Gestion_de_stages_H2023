@@ -1,0 +1,6 @@
+.formulaire-etudiant {
+    width: 50%;
+    max-width: 40rem;
+    margin-left: 30%;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+}
