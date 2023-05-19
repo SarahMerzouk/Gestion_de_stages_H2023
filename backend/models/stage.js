@@ -10,7 +10,7 @@ const stageShema = new Schema({
     typeDeStage:{type: String, required: true},  // faire une liste déroulante (réseaux ou programmation)
     nbPostesDispo:{type: Number, required: true}, // nombre de postes disponibles
     description:{type: String, required: true},
-    remuneration:{type: Number, required: true} // salaire horaire,unique ou aucun (une liste déroulante)
+    remuneration:{type: String, required: true} // salaire horaire,unique ou aucun (une liste déroulante)
 });
 
 module.exports = mongoose.model("Stage", stageShema);
