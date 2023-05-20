@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import ErrorModal from "../../shared/UIElements/ErrorModal";
-import OverlayAlerte from "../../shared/overlay/UneAlerte";
 import "./newStage.css";
 
 const NewStage = () => {
@@ -20,7 +19,6 @@ const NewStage = () => {
   const [saisieRemuneration, setSaisieRemuneration] = useState("25 $/h");
   const { error, sendRequest, clearError } = useHttpClient();
   const [enEdition, setEnEdition] = useState(false);
-  let stageEstAjoute = false;
 
   // handler des saisies
   function saisieNomHandler(event) {
@@ -122,11 +120,11 @@ const NewStage = () => {
         history.push("/");
 
         if (responseData.message === "ajout d'un stage réussie!") {
-          stageEstAjoute = true;
+          alert("Le stage a été ajouté avec succès!")
         } else {
-          stageEstAjoute = false;
+          alert("L'ajout de stage n'a pas fonctionné! \n Veuillez communiquer avec Sylvain Labranche. \n Son courriel est: sylvain.labranche@cmontmorency.qc.ca")
         }
-        console.log(stageEstAjoute);
+
       } catch (err) {
         console.log(err);
       }
@@ -290,12 +288,6 @@ const NewStage = () => {
           </form>
         )}
 
-        {stageEstAjoute && (
-          <OverlayAlerte
-            title="Alerte"
-            message="Le stage a été ajouté avec succès"
-          />
-        )}
       </div>
     </React.Fragment>
   );

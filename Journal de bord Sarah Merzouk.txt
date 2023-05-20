@@ -40,5 +40,5 @@ DATE - HEURE - AJOUTS
                             - j'essaie de faire un overlay qui informe l'utilisateur que le stage a été ajouté.
                                 * le overlay ne fonctionne pas.
 
-> 19 mai de 21h30 à       : travaille sur le frontend.
-                            -
+> 19 mai de 21h30 à 23h36 : travaille sur le frontend.
+                            - J'ai décidé de ne pas faire d'overlay, car ca ne fonctionne pas.
