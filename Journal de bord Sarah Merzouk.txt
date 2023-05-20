@@ -33,8 +33,12 @@ DATE - HEURE - AJOUTS
 > 18 mai de 22h00 à 23h40 : travaille sur le frontend.
                             - ajout de la fonctionnalité qui permet d'ajouter un nouveau stage.
 
-> 19 mai de 14h42 à       : travaille sur le frontend.
+> 19 mai de 14h42 à 19h00 : travaille sur le frontend.
                             - ajout d'une liste déroulante de choix de programme au formulaire d'ajout de stages.
                             - ajout des validateurs.
                             - styler le formulaire.
-                            - ajout d'un overlay qui informe l'utilisateur que le stage a été ajouté.
+                            - j'essaie de faire un overlay qui informe l'utilisateur que le stage a été ajouté.
+                                * le overlay ne fonctionne pas.
+
+> 19 mai de 21h30 à       : travaille sur le frontend.
+                            -
