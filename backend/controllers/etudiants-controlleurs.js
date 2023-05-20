@@ -42,6 +42,22 @@ const ajouterEtudiant = async (requete, reponse, next) => {
     reponse.json({ message: "ajout d'un étudiant réussie!" });
 };
 
+const getEtudiants = async (requete, reponse, next) => {
+    let etudiants;
+  
+    try {
+      etudiants = await Etudiant.find({});
+    } catch {
+      return next(new HttpErreur("Erreur accès stages"), 500);
+    }
+  
+    reponse.json({
+      etudiants: etudiants.map((etudiant) =>
+        etudiant.toObject({ getters: true })
+      ),
+    });
+  };
+
 const inscrireEtudiantAuStage = async (requete, reponse, next) => {
     let etudiantId = requete.params.etudiantId; // quel étudiant on inscrit
     const {description} = requete.body; // le titre du stage
@@ -98,4 +114,5 @@ const inscrireEtudiantAuStage = async (requete, reponse, next) => {
 };
 
 exports.ajouterEtudiant = ajouterEtudiant;
+exports.getEtudiants = getEtudiants;
 exports.inscrireEtudiantAuStage = inscrireEtudiantAuStage;
