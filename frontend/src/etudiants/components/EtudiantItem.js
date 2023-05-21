@@ -1,60 +1,62 @@
 import React, { useState, useEffect } from "react";
 
-import Card from "../../shared/UIElements/Card";
-import Button from "../../shared/FormElements/Button";
-import Modal from "../../shared/UIElements/Modal";
-import Map from "../../shared/UIElements/Map";
 import ErrorModal from "../../shared/UIElements/ErrorModal";
 import { useHttpClient } from "../../shared/hooks/http-hook";
-import "./EtudiantItem.css"
+import "./EtudiantItem.css";
 
-const EtudiantItem = props => {
-    const {error, sendRequest, clearError } = useHttpClient();
-    const [showStages, setShowStage] = useState(false);
-    const [listeStages, setListeStages] = useState([]);
+const EtudiantItem = (props) => {
+  const { error, sendRequest, clearError } = useHttpClient();
+  const [showStages, setShowStage] = useState(false);
+  const [listeStages, setListeStages] = useState([]);
 
-    function toggleShowStages() {
-        if (showStages === false) {
-            setShowStage(true)
-        } else {
-            setShowStage(false)
-        }
+  function toggleShowStages() {
+    if (showStages === false) {
+      setShowStage(true);
+    } else {
+      setShowStage(false);
     }
+  }
 
-    useEffect(() => {
-        const fetchStages = async () => {
-          try {
-            const responseData = await sendRequest(
-              `http://localhost:5000/api/stages/`
-            );
-            setListeStages(responseData.stages);
-          } catch (err) {}
-        };
-        fetchStages();
-    }, [sendRequest]);
+  useEffect(() => {
+    const fetchStages = async () => {
+      try {
+        const responseData = await sendRequest(
+          `http://localhost:5000/api/stages/`
+        );
+        setListeStages(responseData.stages);
+      } catch (err) {}
+    };
+    fetchStages();
+  }, [sendRequest]);
+  return (
+    <React.Fragment>
+      <div className="div-etudiant">
+        <ErrorModal error={error} onClear={clearError} />
+        <p>{props.noDa}</p>
+        <p>{props.nom}</p>
+        <p>{props.courriel}</p>
+        <p>{props.profil}</p>
 
-    return (
-        <React.Fragment>
-            <div className="div-etudiant" >
-                <ErrorModal error={error} onClear={clearError} />
-                <p>{props.noDa}</p>
-                <p>{props.nom}</p>
-                <p>{props.courriel}</p>
-                <p>{props.profil}</p>
-
-                {props.stage[0] !== undefined ? <p>{props.stage[0]}</p> :
-                (<button onClick={toggleShowStages}>Assigner un stage</button>)}
-                { showStages === true ?
-                    <select>
-                        {listeStages?.map(stage => (
-                            <option>{stage.description}</option>
-                        ))}
-                    </select> : <span></span>
-                }
-                
-            </div>
-        </React.Fragment>
-    )
-}
+        {props.stage && props.stage.length === 1 ? (
+            // je n'arrive pas à afficher la description et je ne sais pas pk
+          <p>{props.stage[0]}</p>
+        ) : (
+          <button onClick={toggleShowStages}>Assigner un stage</button>
+        )}
+        {showStages === true ? (
+          <select>
+            {listeStages?.map((stage) => (
+                console.log(stage),
+              <option key={stage.description}>{stage.description}</option>
+            ))
+            }
+          </select>
+        ) : (
+          <span></span>
+        )}
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default EtudiantItem;
