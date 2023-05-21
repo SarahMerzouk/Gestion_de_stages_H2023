@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Card from "../../shared/UIElements/Card";
 import Button from "../../shared/FormElements/Button";
@@ -10,32 +10,53 @@ import "./EtudiantItem.css"
 
 const EtudiantItem = props => {
     const {error, sendRequest, clearError } = useHttpClient();
-    const [showMap, setShowMap] = useState(false);
-    const [showConfirmModal, setShowConfirmModal] = useState(false);
+    const [showStages, setShowStage] = useState(false);
+    const [listeStages, setListeStages] = useState();
 
-    const openMapHandler = () => setShowMap(true);
 
-    const closeMapHandler = () => setShowMap(false);
+    function toggleShowStages() {
+        if (showStages === false) {
+            setShowStage(true)
+        } else {
+            setShowStage(false)
+        }
+    }
 
-    const cancelDeleteHandler = () => {
-        setShowConfirmModal(false);
-    };
+    useEffect(() => {
+        const fetchStages = async () => {
+          try {
+            const responseData = await sendRequest(
+              `http://localhost:5000/api/stages/`
+            );
+            setListeStages(responseData.stage);
+          } catch (err) {}
+        };
+        fetchStages();
+    }, [sendRequest]);
 
-    const confirmStageHandler = async () => {
-        /*setShowConfirmModal(false);
-        try {
-          await sendRequest(
-            `http://localhost:5000/api/places/${props.id}`,
-            'DELETE'
-          );
-          props.onDelete(props.id);
-        } catch (err) {}*/
-    };
 
     return (
         <React.Fragment>
-            <ErrorModal error={error} onClear={clearError} />
-            
+            <div className="div-etudiant" >
+                <ErrorModal error={error} onClear={clearError} />
+                <p>{props.noDa}</p>
+                <p>{props.nom}</p>
+                <p>{props.courriel}</p>
+                <p>{props.profil}</p>
+
+                {props.stage === [] ? <p>{props.stage}</p> :
+                <button onClick={toggleShowStages}>Assigner un stage</button>}
+                { showStages === true ?
+                    <select>
+                        {listeStages?.map(stage => (
+                            <option>yo</option>
+                        ))}
+                    </select> : <span></span>
+                }
+                
+            </div>
         </React.Fragment>
     )
 }
+
+export default EtudiantItem;

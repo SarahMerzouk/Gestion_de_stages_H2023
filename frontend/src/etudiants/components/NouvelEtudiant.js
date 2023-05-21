@@ -8,6 +8,7 @@ import ErrorModal from "../../shared/UIElements/ErrorModal";
 import { VALIDATOR_EMAIL, VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
+import './NouvelEtudiant.css'
 
 
 const NouvelEtudiant = () => {
@@ -56,10 +57,10 @@ const NouvelEtudiant = () => {
             );
 
             console.log(responseData);
-            history.push("/")
         } catch (err) {
             console.log(err)
         }
+        window.location.reload();
     }
 
     return (
