@@ -38,21 +38,28 @@ const EtudiantItem = (props) => {
         <p>{props.profil}</p>
 
         {props.stage && props.stage.length === 1 ? (
-            // je n'arrive pas à afficher la description et je ne sais pas pk
+          // je n'arrive pas à afficher la description et je ne sais pas pk
           <p>{props.stage[0]}</p>
         ) : (
           <button onClick={toggleShowStages}>Assigner un stage</button>
         )}
-        {showStages === true ? (
+        {showStages && (
           <select>
-            {listeStages?.map((stage) => (
-                console.log(stage),
-              <option key={stage.description}>{stage.description}</option>
-            ))
-            }
+            {listeStages?.map((stage) => {
+              if (
+                (props.profil === "Réseaux" &&
+                  stage.typeDeStage === "Réseaux") ||
+                (props.profil === "Développement des applications" &&
+                  stage.typeDeStage === "Développement des applications")
+              ) {
+                return (
+                  <option key={stage.description}>{stage.description}</option>
+                );
+              } else {
+                return null;
+              }
+            })}
           </select>
-        ) : (
-          <span></span>
         )}
       </div>
     </React.Fragment>
