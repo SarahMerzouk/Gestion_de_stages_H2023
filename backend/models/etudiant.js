@@ -7,7 +7,7 @@ const etudiantShema = new Schema({
     nom: {type: String, required: true},
     courriel: {type: String, required: true},
     profil: {type: String, required: true},// réseaux ou programmation
-    stage:[{type: mongoose.Types.ObjectId, required: true, ref:"Stage"}] // stage auquel il est affecté
+    stage:[{type: String, required: true}] // stage auquel il est affecté
 });
 
 module.exports = mongoose.model("Etudiant", etudiantShema);

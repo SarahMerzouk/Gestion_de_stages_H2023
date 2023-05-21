@@ -11,8 +11,7 @@ import "./EtudiantItem.css"
 const EtudiantItem = props => {
     const {error, sendRequest, clearError } = useHttpClient();
     const [showStages, setShowStage] = useState(false);
-    const [listeStages, setListeStages] = useState();
-
+    const [listeStages, setListeStages] = useState([]);
 
     function toggleShowStages() {
         if (showStages === false) {
@@ -28,12 +27,11 @@ const EtudiantItem = props => {
             const responseData = await sendRequest(
               `http://localhost:5000/api/stages/`
             );
-            setListeStages(responseData.stage);
+            setListeStages(responseData.stages);
           } catch (err) {}
         };
         fetchStages();
     }, [sendRequest]);
-
 
     return (
         <React.Fragment>
@@ -44,12 +42,12 @@ const EtudiantItem = props => {
                 <p>{props.courriel}</p>
                 <p>{props.profil}</p>
 
-                {props.stage === [] ? <p>{props.stage}</p> :
-                <button onClick={toggleShowStages}>Assigner un stage</button>}
+                {props.stage[0] !== undefined ? <p>{props.stage[0]}</p> :
+                (<button onClick={toggleShowStages}>Assigner un stage</button>)}
                 { showStages === true ?
                     <select>
                         {listeStages?.map(stage => (
-                            <option>yo</option>
+                            <option>{stage.description}</option>
                         ))}
                     </select> : <span></span>
                 }
