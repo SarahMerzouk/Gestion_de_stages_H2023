@@ -43,7 +43,7 @@ const NouvelEtudiant = () => {
 
         try {
             const responseData = await sendRequest(
-                "http://localhost:5000/api/etudiants",
+                process.env.REACT_APP_BACKEND_URL + "/etudiants",
                 "POST",
                 JSON.stringify({
                     noDa: formState.inputs.noDa.value,

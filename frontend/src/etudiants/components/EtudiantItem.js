@@ -28,7 +28,7 @@ const EtudiantItem = (props) => {
 
     try {
         const responseData = await sendRequest(
-            "http://localhost:5000/api/etudiants/inscription/",
+            process.env.REACT_APP_BACKEND_URL + "/etudiants/inscription/",
             "POST",
             JSON.stringify({
               etudiantNom: etudiantNom,
@@ -68,7 +68,7 @@ const EtudiantItem = (props) => {
     const fetchStages = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/stages/`
+          process.env.REACT_APP_BACKEND_URL + `/stages/`
         );
         setListeStages(responseData.stages);
       } catch (err) {}
