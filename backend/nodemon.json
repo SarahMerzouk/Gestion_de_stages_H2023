@@ -1,0 +1,7 @@
+{
+    "env": {
+        "DB_USER": "EricMarinMejia",
+        "DB_PASSWORD": "ericACCESSADMIN",
+        "DB_NAME": "tpsynthese-eric-sarah"
+    }
+}
