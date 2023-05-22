@@ -23,6 +23,7 @@ const EtudiantListHandler = props => {
                 {props.items.map(etudiant => (
                     <EtudiantItem
                         key={etudiant.id}
+                        id={etudiant.id}
                         noDa={etudiant.noDa}
                         nom={etudiant.nom}
                         courriel={etudiant.courriel}

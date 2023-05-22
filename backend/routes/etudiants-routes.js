@@ -10,6 +10,6 @@ router.post('/', controleursEtudiant.ajouterEtudiant);
 router.get('/', controleursEtudiant.getEtudiants);
 
 // permet d'ajouter un étudiant à un stage
-router.post('/inscription/:etudiantId', controleursEtudiant.inscrireEtudiantAuStage);
+router.post('/inscription/', controleursEtudiant.inscrireEtudiantAuStage);
 
 module.exports = router;

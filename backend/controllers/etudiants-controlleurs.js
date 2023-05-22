@@ -59,19 +59,18 @@ const getEtudiants = async (requete, reponse, next) => {
   };
 
 const inscrireEtudiantAuStage = async (requete, reponse, next) => {
-    let etudiantId = requete.params.etudiantId; // quel étudiant on inscrit
-    const {description} = requete.body; // le titre du stage
+    const {etudiantNom, stageId} = requete.body;
     let unEtudiant;
     let unStage;
 
     try {
-        unEtudiant = await Etudiant.findById(etudiantId).populate("stage");
+        unEtudiant = await Etudiant.findOne({nom: etudiantNom}).populate("stage");
     } catch {
         return next(new HttpErreur("Erreur lors de la vérificaton de l'étudiant!", 500));
     }
 
     try {
-        unStage = await Stage.findOne({description: description});
+        unStage = await Stage.findById(stageId);
         console.log(unStage);
     } catch {
         return next(new HttpErreur("Erreur lors de la vérificaton du stage!", 500));
@@ -94,7 +93,7 @@ const inscrireEtudiantAuStage = async (requete, reponse, next) => {
 
     // si le stage n'a plus de postes disponibles
     if (unStage.nbPostesDispo == 0) {
-        return next(new HttpErreur("Le stage n'a plus de postes disponobles", 422));
+        return next(new HttpErreur("Le stage n'a plus de postes disponibles", 422));
     }
 
     try{
