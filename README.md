@@ -6,4 +6,4 @@ Cette application Web à pour but de simuler un site web pour les demandes de st
 ainsi que les employeurs.
 
 Ce projet exploite les concepts d'une communication backend - frontend avec les méthodes POST, GET, UDPDATE, DELETE et
-le useState de React JS et beaucoup plus.
+le useState de React JS et beaucoup plus. 
