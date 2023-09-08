@@ -1,10 +1,11 @@
 # Travail de fin de session en Web
+Fait par : Eric Marin Mejia et Sarah Merzouk.
 
 # Informations supplémentaires
-.Application MERN avec frontend et backend pour gérer les publications et les demandes de stages en informatiques du Cégep 
- Montmorency.
-.Travail synthèse pour le cours Web et bases de données (420 4A5 MO). 
-.Fait par : Eric Marin Mejia et Sarah Merzouk.
+Application MERN avec frontend et backend pour gérer les publications et les demandes de stages en informatiques du Cégep 
+Montmorency.
+
+Travail synthèse pour le cours Web et bases de données (420 4A5 MO). 
 
 # Objectif de l'application
 Simuler un site web de demandes de stages pour les étudiants en informatiques de Montmorency ainsi que les employeurs.
