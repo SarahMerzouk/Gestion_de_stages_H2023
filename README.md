@@ -8,11 +8,11 @@ Montmorency.
 Travail synthèse pour le cours Web et bases de données (420 4A5 MO). 
  
 ## Technologies utilisées
-. React : pour la partie frontend de l'application.
-. Node.js : pour la partie backend de l'application.
-. Express : pour le serveur Node.js.
-. MongoDB : pour la base de données.
-. React Router : pour la gestion des routes dans React.
+1. React : pour la partie frontend de l'application.
+2. Node.js : pour la partie backend de l'application.
+3. Express : pour le serveur Node.js.
+4. MongoDB : pour la base de données.
+5. React Router : pour la gestion des routes dans React.
 
 ## Objectif de l'application
 Simuler un site web de demandes de stages pour les étudiants en informatiques de Montmorency ainsi que les employeurs.
